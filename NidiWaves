@@ -1,0 +1,8 @@
+myAddress = pw.Address(privateKey=' 
+cfdba0ec6a9d2d50aba0bc3ff36e7450')
+otherAddress = pw.Address('3P89inw7JBf4hn1rQNMbyT1hE2K9pFUn1Cy')
+myAddress.sendWaves(otherAddress, 10000000)
+myToken = myAddress.issueAsset('Token1', 'My Token', 1000, 0)
+while not myToken.status():
+	pass
+myAddress.sendAsset(otherAddress, myToken, 50)
